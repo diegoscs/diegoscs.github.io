@@ -51,7 +51,7 @@ export const stackGroups: StackGroup[] = [
   },
   {
     label: { pt: 'BI & Viz', en: 'BI & Viz' },
-    items: ['Power BI', 'Metabase', 'Looker Studio'],
+    items: ['Power BI', 'Looker Studio'],
   },
   {
     label: { pt: 'DevOps', en: 'DevOps' },

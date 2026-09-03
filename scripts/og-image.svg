@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b0c0e"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#eeb347"/>
+
+  <circle cx="86" cy="112" r="6" fill="#eeb347"/>
+  <text x="106" y="120" font-size="24" fill="#eeb347" letter-spacing="3" font-family="Segoe UI, Arial, Helvetica, sans-serif">ENGENHEIRO DE DADOS · DATA ENGINEER</text>
+
+  <text x="80" y="240" font-size="72" font-weight="bold" fill="#eaebed" font-family="Segoe UI, Arial, Helvetica, sans-serif">Diego Soares Candido da Silva</text>
+
+  <text x="80" y="330" font-size="32" fill="#989da5" font-family="Segoe UI, Arial, Helvetica, sans-serif">Pipelines em GCP, BigQuery, dbt, Python e Spark.</text>
+  <text x="80" y="382" font-size="32" fill="#989da5" font-family="Segoe UI, Arial, Helvetica, sans-serif">São Paulo, Brasil · aberto a oportunidades</text>
+
+  <rect x="80" y="486" width="114" height="46" rx="9" fill="none" stroke="#272a30"/>
+    <text x="137" y="515" font-size="22" fill="#989da5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif">Python</text>
+  <rect x="208" y="486" width="75" height="46" rx="9" fill="none" stroke="#272a30"/>
+    <text x="245.5" y="515" font-size="22" fill="#989da5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif">SQL</text>
+  <rect x="297" y="486" width="75" height="46" rx="9" fill="none" stroke="#272a30"/>
+    <text x="334.5" y="515" font-size="22" fill="#989da5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif">dbt</text>
+  <rect x="386" y="486" width="140" height="46" rx="9" fill="none" stroke="#272a30"/>
+    <text x="456" y="515" font-size="22" fill="#989da5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif">BigQuery</text>
+  <rect x="540" y="486" width="127" height="46" rx="9" fill="none" stroke="#272a30"/>
+    <text x="603.5" y="515" font-size="22" fill="#989da5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif">PySpark</text>
+  <rect x="681" y="486" width="166" height="46" rx="9" fill="none" stroke="#272a30"/>
+    <text x="764" y="515" font-size="22" fill="#989da5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif">PostgreSQL</text>
+
+  <text x="80" y="590" font-size="22" fill="#4a5058" font-family="Consolas, monospace">diegoscs.github.io</text>
+</svg>

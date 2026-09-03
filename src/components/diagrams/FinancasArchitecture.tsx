@@ -11,24 +11,25 @@ export function FinancasArchitecture() {
   const pt = locale === 'pt';
 
   const label = {
-    orchestrator: pt
-      ? 'GitHub Actions — agenda (cron diário) e executa o pipeline'
-      : 'GitHub Actions — schedules (daily cron) and runs the pipeline',
     telegram: pt ? 'Bot do Telegram' : 'Telegram bot',
-    telegramSub: pt ? 'upload do extrato' : 'statement upload',
-    ingest: pt ? 'Ingestão Python' : 'Python ingestion',
-    ingestSub: pt ? 'parser OFX + XLSX' : 'OFX + XLSX parser',
-    store: 'Supabase',
-    storeSub: 'PostgreSQL',
-    transform: 'dbt-core',
-    bronze: pt ? 'bronze — extrato bruto' : 'bronze — raw statement',
-    silver: pt ? 'silver — normalizado' : 'silver — normalised',
-    gold: pt ? 'gold — fato + dimensão' : 'gold — fact + dimension',
-    bi: pt ? 'App web' : 'Web app',
-    biSub: pt ? 'dashboards' : 'dashboards',
+    telegramSub: pt ? 'envia o extrato de qualquer lugar' : 'sends the statement from anywhere',
+    sources: pt ? 'Extratos OFX e XLSX' : 'OFX and XLSX statements',
+    sourcesSub: pt ? 'Nubank · Itaú' : 'Nubank · Itaú',
+    ingest: pt ? 'Parser + normalização' : 'Parser + normalisation',
+    ingestSub: pt ? 'TypeScript' : 'TypeScript',
+    supabase: pt ? 'Supabase — Auth e RLS por usuário' : 'Supabase — Auth and per-user RLS',
+    postgres: 'PostgreSQL',
+    bronze: pt ? 'bronze — transação como veio' : 'bronze — transaction as received',
+    silver: pt ? 'silver — schema único + categoria' : 'silver — single schema + category',
+    gold: pt ? 'gold — agregações por período' : 'gold — aggregates by period',
+    app: pt ? 'App Next.js' : 'Next.js app',
+    appSub: pt ? 'Vercel · dashboards' : 'Vercel · dashboards',
+    hash: pt
+      ? 'hash natural sha256(conta|data|valor|descrição|ocorrência) — reenviar o mesmo extrato não duplica'
+      : 'natural hash sha256(account|date|amount|description|occurrence) — re-sending a statement never duplicates',
     title: pt
-      ? 'Fluxo do pipeline de finanças pessoais, do bot do Telegram até os dashboards do app web, orquestrado por GitHub Actions'
-      : 'Personal finance pipeline flow, from the Telegram bot to the web app dashboards, orchestrated by GitHub Actions',
+      ? 'Fluxo do pipeline de finanças pessoais: extratos OFX e XLSX enviados pelo bot do Telegram, normalizados em TypeScript, gravados nas camadas bronze, silver e gold do Postgres no Supabase e consumidos por um app Next.js na Vercel'
+      : 'Personal finance pipeline flow: OFX and XLSX statements sent through the Telegram bot, normalised in TypeScript, written to the bronze, silver and gold layers of Postgres on Supabase and consumed by a Next.js app on Vercel',
   };
 
   const ink = 'rgb(var(--ink))';
@@ -40,7 +41,7 @@ export function FinancasArchitecture() {
   return (
     <figure className="my-8 overflow-x-auto rounded-xl border border-line bg-elevated p-4">
       <svg
-        viewBox="0 0 960 340"
+        viewBox="0 0 960 330"
         role="img"
         aria-label={label.title}
         className="h-auto w-full min-w-[720px]"
@@ -61,107 +62,152 @@ export function FinancasArchitecture() {
           </marker>
         </defs>
 
-        {/* Orquestrador: envolve todo o fluxo */}
-        <rect
-          x="16"
-          y="52"
-          width="928"
-          height="248"
-          rx="14"
-          fill="none"
-          stroke={accent}
-          strokeOpacity="0.45"
-          strokeDasharray="6 5"
-        />
-        <text x="32" y="38" fontSize="12" fill={accent} fontFamily="var(--font-mono)">
-          {label.orchestrator}
-        </text>
-
-        {/* 1 — Telegram */}
+        {/* Gatilho: o bot do Telegram */}
         <g>
-          <rect x="40" y="140" width="150" height="72" rx="10" fill="none" stroke={line} />
-          <text x="115" y="170" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
+          <rect
+            x="222"
+            y="20"
+            width="180"
+            height="54"
+            rx="10"
+            fill="none"
+            stroke={accent}
+            strokeOpacity="0.7"
+          />
+          <text x="312" y="43" fontSize="13" fill={accent} textAnchor="middle" fontWeight="600">
             {label.telegram}
           </text>
-          <text x="115" y="190" fontSize="11" fill={muted} textAnchor="middle">
+          <text x="312" y="61" fontSize="10" fill={muted} textAnchor="middle">
             {label.telegramSub}
           </text>
         </g>
-        <line x1="192" y1="176" x2="218" y2="176" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
+        <line
+          x1="312"
+          y1="76"
+          x2="312"
+          y2="136"
+          stroke={accent}
+          strokeWidth="1.5"
+          markerEnd="url(#arrowhead)"
+        />
+
+        {/* 1 — Fontes */}
+        <g>
+          <rect x="20" y="140" width="170" height="76" rx="10" fill="none" stroke={line} />
+          <text x="105" y="172" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
+            {label.sources}
+          </text>
+          <text x="105" y="192" fontSize="11" fill={muted} textAnchor="middle">
+            {label.sourcesSub}
+          </text>
+        </g>
+        <line
+          x1="192"
+          y1="178"
+          x2="218"
+          y2="178"
+          stroke={accent}
+          strokeWidth="1.5"
+          markerEnd="url(#arrowhead)"
+        />
 
         {/* 2 — Ingestão */}
         <g>
-          <rect x="222" y="140" width="150" height="72" rx="10" fill="none" stroke={line} />
-          <text x="297" y="170" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
+          <rect x="222" y="140" width="180" height="76" rx="10" fill="none" stroke={line} />
+          <text x="312" y="172" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
             {label.ingest}
           </text>
-          <text x="297" y="190" fontSize="11" fill={muted} textAnchor="middle">
+          <text x="312" y="192" fontSize="11" fill={muted} textAnchor="middle">
             {label.ingestSub}
           </text>
         </g>
-        <line x1="374" y1="176" x2="400" y2="176" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
+        <line
+          x1="404"
+          y1="178"
+          x2="430"
+          y2="178"
+          stroke={accent}
+          strokeWidth="1.5"
+          markerEnd="url(#arrowhead)"
+        />
 
-        {/* 3 — Supabase */}
+        {/* 3 — Supabase com as três camadas */}
         <g>
-          <rect x="404" y="140" width="150" height="72" rx="10" fill="none" stroke={line} />
-          <text x="479" y="170" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
-            {label.store}
+          <rect
+            x="434"
+            y="96"
+            width="286"
+            height="176"
+            rx="12"
+            fill="none"
+            stroke={accent}
+            strokeOpacity="0.45"
+            strokeDasharray="6 5"
+          />
+          <text x="577" y="88" fontSize="11" fill={accent} textAnchor="middle" fontFamily="var(--font-mono)">
+            {label.supabase}
           </text>
-          <text x="479" y="190" fontSize="11" fill={muted} textAnchor="middle">
-            {label.storeSub}
+          <text x="577" y="118" fontSize="12" fill={ink} textAnchor="middle" fontWeight="600">
+            {label.postgres}
           </text>
-        </g>
-        <line x1="556" y1="176" x2="582" y2="176" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
 
-        {/* 4 — dbt com as três camadas */}
-        <g>
-          <rect x="586" y="104" width="200" height="144" rx="10" fill="none" stroke={accent} strokeOpacity="0.7" />
-          <text x="686" y="126" fontSize="13" fill={accent} textAnchor="middle" fontWeight="600">
-            {label.transform}
-          </text>
-
-          <rect x="602" y="138" width="168" height="26" rx="6" fill={elevated} stroke={line} />
-          <text x="686" y="155" fontSize="11" fill={ink} textAnchor="middle">
+          <rect x="450" y="128" width="254" height="28" rx="6" fill={elevated} stroke={line} />
+          <text x="577" y="146" fontSize="11" fill={ink} textAnchor="middle">
             {label.bronze}
           </text>
 
-          <path d="M686 166 L686 174" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
+          <path d="M577 158 L577 166" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
 
-          <rect x="602" y="178" width="168" height="26" rx="6" fill={elevated} stroke={line} />
-          <text x="686" y="195" fontSize="11" fill={ink} textAnchor="middle">
+          <rect x="450" y="170" width="254" height="28" rx="6" fill={elevated} stroke={line} />
+          <text x="577" y="188" fontSize="11" fill={ink} textAnchor="middle">
             {label.silver}
           </text>
 
-          <path d="M686 206 L686 214" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
+          <path d="M577 200 L577 208" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
 
-          <rect x="602" y="218" width="168" height="26" rx="6" fill={elevated} stroke={line} />
-          <text x="686" y="235" fontSize="11" fill={ink} textAnchor="middle">
+          <rect x="450" y="212" width="254" height="28" rx="6" fill={elevated} stroke={line} />
+          <text x="577" y="230" fontSize="11" fill={ink} textAnchor="middle">
             {label.gold}
           </text>
         </g>
-        <line x1="788" y1="176" x2="814" y2="176" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
+        <line
+          x1="722"
+          y1="178"
+          x2="748"
+          y2="178"
+          stroke={accent}
+          strokeWidth="1.5"
+          markerEnd="url(#arrowhead)"
+        />
 
-        {/* 5 — App web */}
+        {/* 4 — App de consumo */}
         <g>
-          <rect x="818" y="140" width="120" height="72" rx="10" fill="none" stroke={line} />
-          <text x="878" y="170" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
-            {label.bi}
+          <rect x="752" y="140" width="180" height="76" rx="10" fill="none" stroke={line} />
+          <text x="842" y="172" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">
+            {label.app}
           </text>
-          <text x="878" y="190" fontSize="11" fill={muted} textAnchor="middle">
-            {label.biSub}
+          <text x="842" y="192" fontSize="11" fill={muted} textAnchor="middle">
+            {label.appSub}
           </text>
         </g>
 
-        {/* Retorno: dbt build também roda os testes e falha o workflow */}
+        {/* Portão de idempotência entre a ingestão e a bronze */}
         <path
-          d="M686 262 L686 282 L297 282 L297 216"
+          d="M312 220 L312 286 L577 286 L577 250"
           fill="none"
           stroke={muted}
           strokeWidth="1.2"
           strokeDasharray="4 4"
         />
-        <text x="490" y="298" fontSize="11" fill={muted} textAnchor="middle" fontFamily="var(--font-mono)">
-          {pt ? 'dbt test falhou → reprocessa a bronze' : 'dbt test failed → reprocess bronze'}
+        <text
+          x="444"
+          y="308"
+          fontSize="11"
+          fill={muted}
+          textAnchor="middle"
+          fontFamily="var(--font-mono)"
+        >
+          {label.hash}
         </text>
       </svg>
       <figcaption className="sr-only">{label.title}</figcaption>

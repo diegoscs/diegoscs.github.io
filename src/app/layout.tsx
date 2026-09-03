@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     siteName: profile.name,
     title: `${profile.name} — Engenheiro de Dados`,
     description,
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: profile.name }],
     locale: 'pt_BR',
     alternateLocale: ['en_US'],
   },
@@ -40,6 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${profile.name} — Engenheiro de Dados`,
     description,
+    images: ['/og.png'],
   },
   robots: { index: true, follow: true },
 };

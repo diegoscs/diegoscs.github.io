@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import type { Project } from '@/content/types';
 import { useLanguage } from '@/i18n/LanguageProvider';
-import { asset } from '@/lib/site';
 import { CodeBlock } from './CodeBlock';
 import { FinancasArchitecture } from './diagrams/FinancasArchitecture';
 import { ArrowIcon, ExternalIcon, GitHubIcon } from './Icons';
 import { Markdown } from './Markdown';
+import { ProjectImage } from './ProjectImage';
 import { Reveal } from './Reveal';
 
 const DIAGRAMS = {
@@ -117,19 +117,7 @@ export function CaseStudyView({ project }: { project: Project }) {
               )}
 
               {section.image && (
-                <figure className="my-7">
-                  {/* Placeholder até o screenshot real ser adicionado em /public */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={asset(section.image.src)}
-                    alt={t(section.image.alt)}
-                    loading="lazy"
-                    className="w-full rounded-xl border border-line bg-elevated"
-                  />
-                  <figcaption className="mt-2 text-xs text-muted">
-                    {t(section.image.alt)}
-                  </figcaption>
-                </figure>
+                <ProjectImage src={section.image.src} alt={t(section.image.alt)} />
               )}
             </Reveal>
           );

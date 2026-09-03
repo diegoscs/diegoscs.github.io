@@ -24,11 +24,11 @@ export function FinancasArchitecture() {
     bronze: pt ? 'bronze — extrato bruto' : 'bronze — raw statement',
     silver: pt ? 'silver — normalizado' : 'silver — normalised',
     gold: pt ? 'gold — fato + dimensão' : 'gold — fact + dimension',
-    bi: 'Metabase',
+    bi: pt ? 'App web' : 'Web app',
     biSub: pt ? 'dashboards' : 'dashboards',
     title: pt
-      ? 'Fluxo do pipeline de finanças pessoais, do bot do Telegram até os dashboards no Metabase, orquestrado por GitHub Actions'
-      : 'Personal finance pipeline flow, from the Telegram bot to Metabase dashboards, orchestrated by GitHub Actions',
+      ? 'Fluxo do pipeline de finanças pessoais, do bot do Telegram até os dashboards do app web, orquestrado por GitHub Actions'
+      : 'Personal finance pipeline flow, from the Telegram bot to the web app dashboards, orchestrated by GitHub Actions',
   };
 
   const ink = 'rgb(var(--ink))';
@@ -141,7 +141,7 @@ export function FinancasArchitecture() {
         </g>
         <line x1="788" y1="176" x2="814" y2="176" stroke={accent} strokeWidth="1.5" markerEnd="url(#arrowhead)" />
 
-        {/* 5 — Metabase */}
+        {/* 5 — App web */}
         <g>
           <rect x="818" y="140" width="120" height="72" rx="10" fill="none" stroke={line} />
           <text x="878" y="170" fontSize="13" fill={ink} textAnchor="middle" fontWeight="600">

@@ -4,14 +4,17 @@ import Link from 'next/link';
 import type { Project } from '@/content/types';
 import { useLanguage } from '@/i18n/LanguageProvider';
 import { CodeBlock } from './CodeBlock';
+import { FinanceCategoriesMock } from './diagrams/FinanceCategoriesMock';
+import { FinanceOverviewMock } from './diagrams/FinanceOverviewMock';
 import { FinancasArchitecture } from './diagrams/FinancasArchitecture';
 import { ArrowIcon, ExternalIcon, GitHubIcon } from './Icons';
 import { Markdown } from './Markdown';
-import { ProjectImage } from './ProjectImage';
 import { Reveal } from './Reveal';
 
 const DIAGRAMS = {
   'financas-architecture': FinancasArchitecture,
+  'financas-dashboard-geral': FinanceOverviewMock,
+  'financas-dashboard-categorias': FinanceCategoriesMock,
 } as const;
 
 export function CaseStudyView({ project }: { project: Project }) {
@@ -116,9 +119,6 @@ export function CaseStudyView({ project }: { project: Project }) {
                 />
               )}
 
-              {section.image && (
-                <ProjectImage src={section.image.src} alt={t(section.image.alt)} />
-              )}
             </Reveal>
           );
         })}

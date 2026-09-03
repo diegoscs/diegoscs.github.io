@@ -226,32 +226,20 @@ const project: Project = {
         },
       },
       {
-        heading: { pt: 'Dashboards no Metabase', en: 'Metabase dashboards' },
+        heading: { pt: 'A interface: visão geral', en: 'The interface: overview' },
         body: {
-          pt: 'As tabelas gold alimentam três visões: fluxo de caixa mensal, gastos por categoria e evolução de saldo.',
-          en: 'The gold tables feed three views: monthly cash flow, spend by category and balance evolution.',
+          pt: 'As tabelas gold alimentam a tela principal: quanto saiu no período, dividido entre cartão e Pix, os indicadores de entrada, saída e sobra, e o gasto mês a mês.\n\nOs mockups abaixo reproduzem o layout real da aplicação com **valores fictícios** — os números do meu extrato não vão para o portfólio.',
+          en: 'The gold tables feed the main screen: how much went out in the period, split between card and Pix, the in/out/left indicators, and month-by-month spend.\n\nThe mockups below reproduce the real layout of the app with **fictional figures** — my actual statement numbers do not go into a portfolio.',
         },
-        image: {
-          src: '/projects/financas-metabase-overview.png',
-          alt: {
-            pt: 'Dashboard do Metabase com fluxo de caixa mensal e gastos por categoria',
-            en: 'Metabase dashboard showing monthly cash flow and spend by category',
-          },
-        },
+        diagram: 'financas-dashboard-geral',
       },
       {
-        heading: { pt: 'Evolução de saldo', en: 'Balance evolution' },
+        heading: { pt: 'A interface: fatura por categoria', en: 'The interface: bill by category' },
         body: {
-          pt: 'Saldo acumulado por conta ao longo dos meses, construído sobre a agregação da camada gold.',
-          en: 'Running balance per account across months, built on the gold-layer aggregate.',
+          pt: 'A aba de cartão consolida a fatura dos dois bancos no ciclo de fechamento e quebra o total por categoria. A fatia de "não classificado" é o termômetro da categorização: quanto menor, melhor está a tabela de mapeamento.',
+          en: 'The card tab consolidates both banks into one closing-cycle bill and breaks the total down by category. The "uncategorised" slice is the categorisation thermometer: the smaller it is, the better the mapping table is doing.',
         },
-        image: {
-          src: '/projects/financas-metabase-saldo.png',
-          alt: {
-            pt: 'Gráfico de linha com a evolução do saldo acumulado por conta',
-            en: 'Line chart showing running balance evolution per account',
-          },
-        },
+        diagram: 'financas-dashboard-categorias',
       },
       {
         heading: { pt: 'Resultados e aprendizados', en: 'Results and lessons' },

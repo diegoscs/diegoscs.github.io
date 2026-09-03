@@ -6,7 +6,10 @@ export type Localized = { pt: string; en: string };
 export type CodeLanguage = 'python' | 'sql' | 'yaml' | 'bash' | 'ts' | 'json';
 
 /** Ids de diagramas SVG desenhados à mão em src/components/diagrams. */
-export type DiagramId = 'financas-architecture';
+export type DiagramId =
+  | 'financas-architecture'
+  | 'financas-dashboard-geral'
+  | 'financas-dashboard-categorias';
 
 export type CaseStudySection = {
   heading: Localized;

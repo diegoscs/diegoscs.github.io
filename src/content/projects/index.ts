@@ -5,23 +5,11 @@ import type { Project } from '../types';
 // rode `npm run new:project` (ele cria o arquivo e registra aqui sozinho),
 // ou crie o arquivo à mão e adicione o import + a entrada na lista abaixo.
 // A ordem de exibição vem do campo `order`, não da ordem deste array.
-import automationHub from './automation-hub';
-import candidoDigital from './candido-digital';
 import financasPessoais from './financas-pessoais';
-import jobRadar from './job-radar';
-import pipelineFipe from './pipeline-fipe';
-import scraperCeagesp from './scraper-ceagesp';
-import simuladorFinanciamento from './simulador-financiamento';
 
 const projects: Project[] = [
   // new:project inserts here
-  automationHub,
-  candidoDigital,
   financasPessoais,
-  jobRadar,
-  pipelineFipe,
-  scraperCeagesp,
-  simuladorFinanciamento,
 ];
 
 /** Todos os projetos, ordenados por `order` (menor primeiro). */

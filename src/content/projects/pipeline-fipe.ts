@@ -25,8 +25,8 @@ const project: Project = {
     en: 'A private price base that allows comparing models, tracking depreciation by year and cross-referencing categories.',
   },
   stack: ['Python', 'Pandas', 'SQL', 'REST APIs', 'ETL'],
-  // TODO: substituir pela URL real do repositório
-  repoUrl: 'https://github.com/SEU-USUARIO/pipeline-fipe',
+  // Repositório ainda privado — descomente quando publicar:
+  // repoUrl: '',
 };
 
 export default project;

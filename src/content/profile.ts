@@ -8,15 +8,12 @@ export const profile = {
   name: 'Diego Soares Candido da Silva',
   shortName: 'Diego Silva',
   location: { pt: 'São Paulo, SP — Brasil', en: 'São Paulo, Brazil' },
-  // TODO: confirmar o e-mail que você quer publicar
-  email: 'diego@exemplo.com',
-  // TODO: substituir pelas URLs reais
+  email: 'diego.candido.pro@gmail.com',
   github: 'https://github.com/diegoscs',
-  linkedin: 'https://www.linkedin.com/in/SEU-PERFIL',
-  cv: {
-    pt: '/cv/diego-silva-cv-pt.pdf',
-    en: '/cv/diego-silva-cv-en.pdf',
-  },
+  linkedin: 'https://www.linkedin.com/in/diego-candido-8b0850222/',
+  // Um único PDF serve os dois idiomas. Para ter uma versão em inglês,
+  // troque este campo por { pt: '...', en: '...' } e ajuste o Hero.
+  cv: '/cv/curriculo-diego-soares-eng-dados.pdf',
   role: {
     pt: 'Engenheiro de Dados Júnior',
     en: 'Junior Data Engineer',

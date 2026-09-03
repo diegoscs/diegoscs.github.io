@@ -6,7 +6,7 @@ import { asset } from '@/lib/site';
 import { ArrowIcon, DownloadIcon, GitHubIcon, LinkedInIcon } from './Icons';
 
 export function Hero() {
-  const { d, t, locale } = useLanguage();
+  const { d, t } = useLanguage();
 
   return (
     <section className="pb-16 pt-16 sm:pb-24 sm:pt-24">
@@ -41,7 +41,7 @@ export function Hero() {
           </a>
 
           <a
-            href={asset(profile.cv[locale])}
+            href={asset(profile.cv)}
             download
             className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
           >

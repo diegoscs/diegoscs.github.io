@@ -25,8 +25,8 @@ const project: Project = {
     en: 'One surface for scheduling, a queryable run history, and silent failures caught the same day instead of the following week.',
   },
   stack: ['n8n', 'Docker', 'Python', 'PostgreSQL', 'Telegram API'],
-  // TODO: substituir pela URL real do repositório
-  repoUrl: 'https://github.com/SEU-USUARIO/automation-hub',
+  // Repositório ainda privado — descomente quando publicar:
+  // repoUrl: '',
 };
 
 export default project;

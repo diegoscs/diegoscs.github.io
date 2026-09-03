@@ -25,9 +25,9 @@ const project: Project = {
     en: 'Monthly cash flow, spend by category and balance evolution in Metabase dashboards, refreshed with no manual work.',
   },
   stack: ['Python', 'dbt', 'PostgreSQL', 'Supabase', 'GitHub Actions', 'Metabase', 'SQL', 'Telegram API'],
-  // TODO: substituir pela URL real do repositório
-  repoUrl: 'https://github.com/SEU-USUARIO/financas-pessoais',
-  cover: '/projects/financas-pessoais-cover.png',
+  repoUrl: 'https://github.com/diegoscs/financas-pipeline',
+  // Imagem de Open Graph — descomente quando o arquivo existir em /public/projects:
+  // cover: '/projects/financas-pessoais-cover.png',
   caseStudy: {
     sections: [
       {

@@ -25,8 +25,7 @@ const project: Project = {
     en: 'Round-the-clock service without hiring, a calendar that fills itself, and conversation history turned into business data.',
   },
   stack: ['n8n', 'Evolution API', 'Redis', 'Supabase', 'Google Calendar API', 'IA / LLM', 'Next.js', 'Docker'],
-  // TODO: substituir pela URL real do site
-  liveUrl: 'https://candidodigital.com.br',
+  // liveUrl: '',
 };
 
 export default project;

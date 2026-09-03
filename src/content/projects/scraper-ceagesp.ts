@@ -25,9 +25,8 @@ const project: Project = {
     en: 'A private historical series of wholesale prices, ready for seasonality and per-product variation analysis.',
   },
   stack: ['Python', 'BeautifulSoup', 'Pandas', 'Web Scraping'],
-  liveUrl: 'https://ceagesp.gov.br/cotacoes/',
-  // TODO: substituir pela URL real do repositório
-  repoUrl: 'https://github.com/SEU-USUARIO/scraper-ceagesp',
+  // Repositório ainda privado — descomente quando publicar:
+  // repoUrl: '',
 };
 
 export default project;

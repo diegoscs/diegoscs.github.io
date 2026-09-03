@@ -25,8 +25,8 @@ const project: Project = {
     en: 'A transparent comparison between both systems, with total interest and outstanding balance visible instalment by instalment.',
   },
   stack: ['Google Apps Script', 'JavaScript', 'Google Sheets'],
-  // TODO: substituir pela URL real do repositório
-  repoUrl: 'https://github.com/SEU-USUARIO/simulador-financiamento',
+  // Repositório ainda privado — descomente quando publicar:
+  // repoUrl: '',
 };
 
 export default project;

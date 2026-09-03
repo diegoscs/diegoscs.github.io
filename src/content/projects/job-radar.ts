@@ -25,8 +25,8 @@ const project: Project = {
     en: 'Relevant openings arrive on their own and the Notion funnel reflects the real state of each application with no manual updates.',
   },
   stack: ['n8n', 'Notion API', 'Telegram API', 'Python', 'IA / LLM', 'REST APIs'],
-  // TODO: substituir pela URL real do repositório
-  repoUrl: 'https://github.com/SEU-USUARIO/job-radar',
+  // Repositório ainda privado — descomente quando publicar:
+  // repoUrl: '',
 };
 
 export default project;
